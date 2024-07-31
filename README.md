@@ -4,6 +4,40 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 ---
 
+## Data generation and mapping
+
+### Python Scripts Descriptions
+
+- **read_generator_Dirichlet1.py:**
+- **read_generator_Dirichlet10.py:**
+- **read_generator_sparseDirichlet.py:**
+- **read_generator_sparseDirichlet2.py:**
+
+---
+
+### Bash Scripts Descriptions
+
+- **RunKMA.sh:**
+
+---
+
+## Data processing, analytics and visualisation
+
+### R Scripts Descriptions
+
+- **CLEAN.R:**
+
+- **ALPHA_ESTIMATORS.R:**
+- **ENTROPY_ESTIMATORS.R:**
+
+- **SYNTHETIC_UNMAPPED.R**
+- **SYNTHETIC_MAPPED.R:**
+
+- **SEWAGE_KMA.R:**
+- **SEWAGE_Kraken2.R:**
+
+---
+
 ### RData Object Descriptions
 
 **Abundance Tables:**
