@@ -1,6 +1,6 @@
 ## DiversityInMetagenomics
 
-This is a repository for the code scripts and synthetic data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
+This is a repository for the code scripts and synthetic and sewage data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
 
 ---
 
