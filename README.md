@@ -4,9 +4,8 @@
 This is a repository for the code scripts and synthetic and sewage data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
 
 ---
----
-
 ## Data Generation, Mapping and Abundance Quantification
+---
 
 ### Python Scripts Descriptions
 
@@ -41,9 +40,8 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 - **run_Bracken_Sewage.sh:** runs Bracken on the individual reports obtained from Kraken2 run for the quantification of abundances from Kraken2 hits, outputs .csv with abundance counts
 
 ---
----
-
 ## Data Processing, Analytics and Visualisation
+---
 
 ### R Scripts Descriptions
 
