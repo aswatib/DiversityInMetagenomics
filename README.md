@@ -10,9 +10,13 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 ### Python Scripts Descriptions
 
 - **read_generator_Dirichlet_alpha1.py:** generates DNA raw reads in FASTQ format with an underlying symmetric Dirichlet distribution and a concentration parameter of 10
+  
 - **read_generator_Dirichlet_alpha10.py:** generates DNA raw reads in FASTQ format with an underlying symmetric Dirichlet distribution and a concentration parameter of 1
+  
 - **read_generator_sparseDirichlet.py:** generates DNA raw reads in FASTQ format with an underlying sparse Dirichlet distribution and a concentration parameter of 0.5
+  
 - **read_generator_sparseDirichlet2.py:** generates DNA raw reads in FASTQ format with an underlying sparse Dirichlet distribution and a concentration parameter of 0.01
+  
 - **combine_bracken_report.py:** combines all individual sewage samples' Bracken-coverted Kraken2 reports and makes a single .csv file of abundance counts based on the original Kraken2 hits (excludes the bracken estimates of counts)
 
 ---
