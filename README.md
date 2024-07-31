@@ -56,12 +56,16 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 #### For Synthetic data
 - **SYNTHETIC_UNMAPPED.R** analytics and visualisation for unmapped raw reads for the four sets of synthetic data which was generated using python scripts above
   
-- **SYNTHETIC_MAPPED.R:** analytics and visualisation for mapped reads using mapstat files output from the KMA run for synthetic data
+- **SYNTHETIC_MAPPED.R:** analytics and visualisation for mapped counts and alignment counts using mapstat files output from the KMA run for synthetic data
+
+- **SYNTHETIC_ENTROPIES.R:** entropy estimations for synthetic abundance datasets using mapped counts and alignment counts before and after removing variance towers
 
 #### For Sewage data
 - **SEWAGE_KMA.R:** analytics and visualisation for mapped reads using mapstat files output from the KMA run for sewage data
-
 - **SEWAGE_Kraken2.R:** analytics and visualisation for mapped reads using combined bracken output csv from the Kraken2 run for sewage data
+
+- **SEWAGE_KMA_ENTROPIES.R:** entropy estimations for sewage abundance datasets using mapped counts frm KMA hits before and after removing variance towers and also after high-noise, low-signal taxa counts (based on SNR)
+- **SEWAGE_Kraken2_ENTROPIES.R:** entropy estimations for sewage abundance datasets using mapped counts from Kraken2 hits before and after removing high-noise, low-signal taxa counts (based on SNR)
 
 ---
 
