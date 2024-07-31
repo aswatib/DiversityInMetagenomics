@@ -4,7 +4,7 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 ---
 
-## Data Generation and Mapping
+## Data Generation, Mapping and Abundance Quantification
 
 ### Python Scripts Descriptions
 
