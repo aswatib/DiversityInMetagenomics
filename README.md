@@ -43,17 +43,25 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 ### R Scripts Descriptions
 
+#### Cleaning and R packages
+- **PACKAGES.R:** installs and loads all the requisite R packages and libraries used in the project, in one go
+  
+- **CLEANER.R:** provides functions for cleaning of species names in an abundance dataset
+
+#### Alpha and entropy estimators
 - **ALPHA_ESTIMATORS.R:** provides functions to estimate concentration parameter values for each category in an abundance dataset, applies alpha Star and alpha Star NSB from Piga et al. as well as alpha estimation using method of moments
+  
 - **ENTROPY_ESTIMATORS.R:** provides functions to estimate entropy using six different methods, as given by Piga et al., Nemenmann et al., Wolpert and Wolf, Hausser and Strimmer, Chao and Shen, and Shannon (1948)
 
+#### For Synthetic data
+- **SYNTHETIC_UNMAPPED.R** analytics and visualisation for unmapped raw reads for the four sets of synthetic data which was generated using python scripts above
+  
+- **SYNTHETIC_MAPPED.R:** analytics and visualisation for mapped reads using mapstat files output from the KMA run for synthetic data
 
-- **CLEAN.R:**
+#### For Sewage data
+- **SEWAGE_KMA.R:** analytics and visualisation for mapped reads using mapstat files output from the KMA run for sewage data
 
-- **SYNTHETIC_UNMAPPED.R**
-- **SYNTHETIC_MAPPED.R:**
-
-- **SEWAGE_KMA.R:**
-- **SEWAGE_Kraken2.R:**
+- **SEWAGE_Kraken2.R:** analytics and visualisation for mapped reads using combined bracken output csv from the Kraken2 run for sewage data
 
 ---
 
