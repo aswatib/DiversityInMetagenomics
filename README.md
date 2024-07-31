@@ -35,7 +35,7 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 - **run_KMA_Sewage.sh:** runs KMA on sewage raw reads and maps them to the bacATG database, outputs .res, .fsa and .mapstat files
 - **run_Kraken2_Sewage.sh:** runs Kraken2 on sewage raw reads and maps them to the bacterial and plasmid libraries from NCBI, outputs .report files
-- **run_Bracken_Sewage.sh:** run Bracken on the individual reports obtained from Kraken2 run for the quantification of abundances from Kraken2 hits, outputs .csv with abundance counts
+- **run_Bracken_Sewage.sh:** runs Bracken on the individual reports obtained from Kraken2 run for the quantification of abundances from Kraken2 hits, outputs .csv with abundance counts
 
 ---
 
