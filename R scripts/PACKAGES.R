@@ -39,9 +39,12 @@ required_packages <- c(
   "MASS",
   "matrixStats",
   "fossil",
-  "data.table"
+  "data.table",
+  "HMP",
+  "dirmult",
+  "fields",
+  "colorspace"
 )
-
 
 # Check if each package is installed, install if not and then load
 for (pkg in required_packages) {
