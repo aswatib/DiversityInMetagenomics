@@ -104,5 +104,5 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 ---
 
 ## Attributions
-- [@mapstatHelpers : For the mapstatHelpers R package which was used in the thesis project for reading multiple maptstat files
+- @mapstatHelpers : For the mapstatHelpers R package which was used in the thesis project for reading multiple maptstat files
 
