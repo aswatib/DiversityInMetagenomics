@@ -120,6 +120,9 @@ save(kma_after_noise_entropies, file="../RData Objects/kma_after_noise_entropies
 
 # Load again when required
 load("../RData Objects/kma_after_noise_entropies.RData")
+
+# Print entropies
+kma_after_noise_entropies
 # ------------------------------------------------------------------------------
 # Kraken2 entropies after removing noise and save as RData object
 kraken2_after_noise_entropies <- estimate_individual_entropies(kraken2_filtered_df)
@@ -127,5 +130,8 @@ save(kraken2_after_noise_entropies, file="../RData Objects/kraken2_after_noise_e
 
 # Load again when required
 load("../RData Objects/kraken2_after_noise_entropies.RData")
+
+# Print entropies
+kraken2_after_noise_entropies
 # ------------------------------------------------------------------------------
 # ==============================================================================
