@@ -1,25 +1,23 @@
 # ==============================================================================
-#                 ENTROPY ESTIMATIONS FOR SEWAGE COUNT FROM KMA HITS
-#                              WITH VARIANCE TOWERS
+#                 ENTROPY ESTIMATIONS FOR SEWAGE COUNT FROM KRAKEN2 HITS
 # ==============================================================================
 source("PACKAGES.R")
 
 # Load the KMA abundance data and estimate entropies
-load("../RData Objects/kma_com.RData")
-kma_entropies <- estimate_individual_entropies(kma_com)
+load("../RData Objects/kraken2_com.RData")
+kraken2_entropies <- estimate_individual_entropies(kraken2_com)
 
 # Save estimated entropies as RData object
-save(kma_entropies, file = "../RData Objects/kma_entropies.RData")
+save(kraken2_entropies, file = "../RData Objects/kraken2_entropies.RData")
 
 # Load the object entropies object for KMA data when required
-load("../RData Objects/kma_entropies.RData")
+load("../RData Objects/kraken2_entropies.RData")
 # ------------------------------------------------------------------------------
 # ==============================================================================
 #  DEVIATION OF SAMPLE-WISE ENTROPY VALUES FROM AVG ENTROPY FOR EACH METHOD
-#                              WITH VARIANCE TOWERS
 # ==============================================================================
 # Calculate the absolute difference between entropy and the average entropy
-entropies <- kma_entropies
+entropies <- kraken2_entropies
 avg_entropies <- colMeans(entropies)
 
 # Subtract each value in the columns from the corresponding column mean and take the absolute difference
@@ -45,7 +43,7 @@ ggplot(long_diff_entropies, aes(x = factor(Sample), y = Difference, fill = Metho
   geom_bar(stat = "identity", position = position_dodge()) +
   labs(x = "Samples", y = "Absolute Differences between Entropy and Avg Entropy") +
   ggtitle(label = "Deviation of Sample-wise Entropy Values from Average Entropy for Each Method",
-          subtitle = "Average entropy for each method is calculated as the mean entropy value across all samples.\n\nBased on KMA hits") +
+          subtitle = "Average entropy for each method is calculated as the mean entropy value across all samples.\n\nBased on Kraken2 hits") +
   theme(
     plot.title = element_text(size = 14, face = "bold"),
     plot.subtitle = element_text(size = 12, face="italic"),
@@ -57,80 +55,21 @@ ggplot(long_diff_entropies, aes(x = factor(Sample), y = Difference, fill = Metho
   ) +
   scale_fill_manual(values = colors)
 
-# Saved to Images as "AvgEntropyDiffs_KMA.pdf"
-# ------------------------------------------------------------------------------
-# ==============================================================================
-#                 ENTROPY ESTIMATIONS FOR SEWAGE COUNT FROM KMA HITS
-#                            WITHOUT VARIANCE TOWERS
-# ==============================================================================
-# Load the KMA abundance data without variance towers and estimate entropies
-load("../RData Objects/kma_after_var.RData")
-kma_after_var_entropies <- estimate_individual_entropies(kma_after_var)
-
-# Save estimated entropies as RData object
-save(kma_after_var_entropies, file = "../RData Objects/kma_after_var_entropies.RData")
-
-# Load the object entropies object for KMA without variance towers data when required
-load("../RData Objects/kma_after_var_entropies.RData")
-# ------------------------------------------------------------------------------
-# ==============================================================================
-#  DEVIATION OF SAMPLE-WISE ENTROPY VALUES FROM AVG ENTROPY FOR EACH METHOD
-#                            WITHOUT VARIANCE TOWERS
-# ==============================================================================
-# Deviation of Sample-wise Entropy Values from Average Entropy for Each Method
-avg_entropies <- colMeans(kma_after_var_entropies)
-
-# Subtract each value in the columns from the corresponding column mean and take the absolute difference
-diff_entropies <- abs(sweep(kma_after_var_entropies, 2, avg_entropies, "-"))
-diff_entropies$Sample <- as.numeric(rownames(diff_entropies))
-
-# Reshape the data to long format
-long_diff_entropies <- diff_entropies %>%
-  pivot_longer(cols = -Sample, names_to = "Method", values_to = "Difference")
-
-long_diff_entropies$Sample <- as.factor(long_diff_entropies$Sample)
-long_diff_entropies$Method <- as.factor(long_diff_entropies$Method)
-
-# Define distinct colors for the methods
-colors <- colorspace::sequential_hcl(6, "Blues", rev = TRUE)
-
-# Reshape the data to long format
-long_diff_entropies <- diff_entropies %>%
-  pivot_longer(cols = -Sample, names_to = "Method", values_to = "Difference")
-
-# Create the stacked bar plot using ggplot2
-ggplot(long_diff_entropies, aes(x = factor(Sample), y = Difference, fill = Method)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  labs(x = "Samples", y = "Absolute Differences between Entropy and Avg Entropy") +
-  ggtitle(label = "Deviation of Sample-wise Entropy Values from Average Entropy for Each Method",
-          subtitle = "Average entropy for each method is calculated as the mean entropy value across all samples.\n\nBased on KMA counts without variance towers") +
-  theme(
-    plot.title = element_text(size = 14, face = "bold"),
-    plot.subtitle = element_text(size = 12, face="italic"),
-    axis.title = element_text(size = 12),
-    axis.title.x = element_text(vjust=-2),
-    axis.text.x = element_text(angle = 0, hjust = 0.5),
-    axis.text = element_text(size = 11),
-    legend.position = "bottom"
-  ) +
-  scale_fill_manual(values = colors)
-
-# Saved to Images as "AvgEntropyDiffs_KMA_After_Var.pdf"
+# Saved to Images as "AvgEntropyDiffs_Kraken2.pdf"
 # ------------------------------------------------------------------------------
 # ==============================================================================
 #      RELATIONSHIP BETWEEN AVERAGE ENTROPIES AND DISTANCE MEASURES
-#           Only for Original KMA hits with variance towers
 # ==============================================================================
 # Calculate average distance of each sample from all other samples
-df <- clr(kma_com)
+df <- clr(kraken2_com)
 dist_matrix <- vegan::vegdist(df, method = "euclidean")
 dist_matrix_no_diag <- as.matrix(dist_matrix)
 diag(dist_matrix_no_diag) <- NA # Putting NA for the diagonals so that zero values do not affect the avg calculation
 avg_distance <- apply(dist_matrix_no_diag, 1, function(x) mean(x, na.rm = TRUE))
 
 # Combine entropy and average distance into a data frame
-modeling_data <- kma_entropies
-modeling_data$Sample <- rownames(kma_entropies)
+modeling_data <- kraken2_entropies
+modeling_data$Sample <- rownames(kraken2_entropies)
 modeling_data$AvgDistance <- avg_distance
 
 # Sort observations in the order of sample numbers
@@ -164,7 +103,7 @@ plot(model_piga, which = 1, main = "Piga's entropy ~ AvgDistance\n")
 
 # Saved to Images as "residualVsFitted_KMA.pdf"
 # ------------------------------------------------------------------------------
-# CORRELATION ANALYSIS FOR KMA HITS
+# CORRELATION ANALYSIS FOR KRAKEN2 HITS
 
 # Pearson correlation test
 pearson_cor_df <- data.frame(Naive.entropy_avgDist = cor(modeling_data$AvgDistance, 

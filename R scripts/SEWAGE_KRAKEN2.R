@@ -31,7 +31,6 @@ str(combined_kraken2_output)
 
 # Check dimensions
 dim(combined_kraken2_output)
-# View(combined_kraken2_output)
 
 # Extract the sample numbers from the row names
 sample_numbers <- unique(gsub(".*_(\\d+)$", "\\1", rownames(combined_kraken2_output)))
@@ -61,10 +60,10 @@ dim(combined_kraken2_results)
 # Save the Kraken2 abundance set as RData object
 kraken2_com <- combined_kraken2_results
 dim(kraken2_com)
-save(kraken2_com, file = "kraken2_com.RData")
+save(kraken2_com, file = "../RData Objects/kraken2_com.RData")
 # ------------------------------------
 # OR SIMPLY LOAD FROM RData Objects
-load("kraken2_com.RData")
+load("../RData Objects/kraken2_com.RData")
 # ==============================================================================
 # ==============================================================================
 # ------------------------- SPECIES ACCUMULATION CURVES ------------------------
