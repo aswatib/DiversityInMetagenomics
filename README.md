@@ -28,9 +28,6 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 - **bacOriginal_KMA.sh** applies kma index on a set of 40 annotated complete bacterial genomes to make the BacOriginal database and then maps the synthetic raw reads to that database, outputs .res, .fsa and .mapstat files
 - **bacATG_KMA.sh** maps the synthetic raw reads to the bacdb (bacATG database from CGE's KmerFinder tool), outputs .res, .fsa and .mapstat files
 
-- **bacATG_KMA.sh:** runs KMA on synthetic reads data and maps them to the BacATG database
-- **bacOriginal_KMA.sh:** runs KMA on synthetic reads data and maps them to the BacOriginal database
-
 #### For Sewage data
 
 - **run_KMA_Sewage.sh:** runs KMA on sewage raw reads and maps them to the bacATG database, outputs .res, .fsa and .mapstat files
