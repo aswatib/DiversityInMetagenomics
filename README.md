@@ -45,8 +45,8 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 - **CLEAN.R:**
 
-- **ALPHA_ESTIMATORS.R:**
-- **ENTROPY_ESTIMATORS.R:**
+- **ALPHA_ESTIMATORS.R:** provides functions to estimate concentration parameter values for each category in an abundance dataset, applies alpha Star and alpha Star NSB from Piga et al. as well as alpha estimation using method of moments
+- **ENTROPY_ESTIMATORS.R:** provides functions to estimate entropy using six different methods, as given by Piga et al., Nemenmann et al., Wolpert and Wolf, Hausser and Strimmer, Chao and Shen, and Shannon (1948)
 
 - **SYNTHETIC_UNMAPPED.R**
 - **SYNTHETIC_MAPPED.R:**
