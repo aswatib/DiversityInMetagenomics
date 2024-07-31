@@ -33,15 +33,13 @@ dim(df)
 # Remove the sample column for diversity estimation and analysis
 com <- df[-1]
 kma_com <- com
+dim(kma_com)
 
 # Save the KMA abundance set as RData object
-save(kma_com, file = "kma_com.RData")
-# write.csv(com, "com_before.csv")
-dim(df)
-dim(kma_com)
+save(kma_com, file = "../RData Objects/kma_com.RData")
 # ------------------------------------
 # OR SIMPLY LOAD FROM RData Objects
-load("kma_com.RData")
+load("../RData Objects/kma_com.RData")
 # ------------------------------------------------------------------------------
 # ==============================================================================
 # ------------------------- SPECIES ACCUMULATION CURVES ------------------------
@@ -346,6 +344,3 @@ ggplot(pcoa_data, aes(x = V1, y = V2, label = Sample, color = Clusters)) +
 # PCoA plot saved as "sewage_KMA_After_Var_PCoA.pdf"
 # ------------------------------------------------------------------------------
 # ==============================================================================
-
-
-
