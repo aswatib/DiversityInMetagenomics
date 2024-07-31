@@ -2,6 +2,8 @@
 
 This is a repository for the code scripts and synthetic data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
 
+---
+
 ### RData Object Descriptions
 
 **Abundance Tables:**
@@ -26,5 +28,7 @@ This is a repository for the code scripts and synthetic data used in the master 
 
 - **kma_after_var_data_bootstrap_resultsSingles.RData**: bootstrap results for KMA data after removing variance towers, focusing on individual samples
 - **kma_after_var_data_bootstrap_resultsCombined.RData**: combined bootstrap results for KMA data after removing variance towers, focusing on aggregated counts of taxa across samples
+
+---
 
 
