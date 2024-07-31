@@ -12,6 +12,8 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 - **kraken2_com.RData**: Sewage abundance counts obtained from Kraken2 hits
 
+--
+
 **Entropy Estimates:**
 
 - **kma_entropies.RData**: entropy values for kma_com data
@@ -20,6 +22,8 @@ This is a repository for the code scripts and synthetic and sewage data used in 
  
 - **kraken2_entropies.RData**: entropy values for kraken2_com data
 - **kraken2_after_noise_entropies.RData**: entropy values for kraken2_com data after removing high-noise, low-signal taxa columns
+
+--
 
 **Bootstrapped Entropy Estimates:**
 
