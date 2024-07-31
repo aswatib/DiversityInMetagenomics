@@ -4,24 +4,37 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 
 ---
 
-## Data generation and mapping
+## Data Generation and Mapping
 
 ### Python Scripts Descriptions
 
-- **read_generator_Dirichlet1.py:**
-- **read_generator_Dirichlet10.py:**
-- **read_generator_sparseDirichlet.py:**
-- **read_generator_sparseDirichlet2.py:**
+- **read_generator_Dirichlet_alpha1.py:** generates DNA raw reads in FASTQ format with an underlying symmetric Dirichlet distribution and a concentration parameter of 10
+- **read_generator_Dirichlet_alpha10.py:** generates DNA raw reads in FASTQ format with an underlying symmetric Dirichlet distribution and a concentration parameter of 1
+- **read_generator_sparseDirichlet.py:** generates DNA raw reads in FASTQ format with an underlying sparse Dirichlet distribution and a concentration parameter of 0.5
+- **read_generator_sparseDirichlet2.py:** generates DNA raw reads in FASTQ format with an underlying sparse Dirichlet distribution and a concentration parameter of 0.01
+- **combine_bracken_report.py:** combines all individual sewage samples' bracken-coverted Kraken2 reports and makes a single .csv file abundance counts based on original Kraken2 hits (excludes the bracken estimates of counts)
 
 ---
 
 ### Bash Scripts Descriptions
 
-- **RunKMA.sh:**
+#### For Synthetic data
+
+- **bacOriginal_KMA.sh** applies kma index on a set of 40 annotated complete bacterial genomes to make the BacOriginal database and then maps the synthetic raw reads to that database, outputs .res, .fsa and .mapstat files
+- **bacATG_KMA.sh** maps the synthetic raw reads to the existing bacdb (bacATG database), outputs .res, .fsa and .mapstat files
+
+- **bacATG_KMA.sh:** runs KMA on synthetic reads data and maps them to the BacATG database
+- **bacOriginal_KMA.sh:** runs KMA on synthetic reads data and maps them to the BacOriginal database
+
+#### For Sewage data
+
+- **run_KMA_Sewage.sh:** runs KMA on sewage raw reads and maps them to the bacATG database, outputs .res, .fsa and .mapstat files
+- **run_Kraken2_Sewage.sh:** runs Kraken2 on sewage raw reads and maps them to the bacterial and plasmid libraries from NCBI, outputs .report files
+- **run_Bracken_Sewage.sh:** run Bracken on the individual reports obtained from Kraken2 run for the quantification of abundances from Kraken2 hits, outputs .csv with abundance counts
 
 ---
 
-## Data processing, analytics and visualisation
+## Data Processing, Analytics and Visualisation
 
 ### R Scripts Descriptions
 
