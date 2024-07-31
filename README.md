@@ -1,4 +1,5 @@
-## Master Thesis Project: Exploring Microbial Diversity In Metagenomics (March 1, 2024 to August 1, 2024)
+## Exploring Microbial Diversity In Metagenomics
+#### Master Thesis Project (March 1, 2024 to August 1, 2024)
 
 This is a repository for the code scripts and synthetic and sewage data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
 
