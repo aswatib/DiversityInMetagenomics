@@ -4,7 +4,6 @@
 This is a repository for the code scripts and synthetic and sewage data used in the master thesis project titled "Exploring Microbial Diversity in Metagenomics". Below is a description of the data objects, scripts and their functionalities.
 
 ---
----
 
 ## Data Generation, Mapping and Abundance Quantification
 
@@ -20,7 +19,6 @@ This is a repository for the code scripts and synthetic and sewage data used in 
   
 - **combine_bracken_report.py:** combines all individual sewage samples' Bracken-coverted Kraken2 reports and makes a single .csv file of abundance counts based on the original Kraken2 hits (excludes the bracken estimates of counts)
 
----
 
 ### Bash Scripts Descriptions
 
@@ -37,7 +35,6 @@ This is a repository for the code scripts and synthetic and sewage data used in 
   
 - **run_Bracken_Sewage.sh:** runs Bracken on the individual reports obtained from Kraken2 run for the quantification of abundances from Kraken2 hits, outputs .csv with abundance counts
 
----
 ---
 
 ## Data Processing, Analytics and Visualisation
@@ -73,7 +70,7 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 - **SNR_KMA+KRAKEN2.R:** signal-to-noise-ratio analysis of CLR-transformed abundances for KMA and Kraken2 hits, followed by entropy estimations after removing high-noise, low-signal taxa counts (based on SNR)
   
 - **SEWAGE_BOOTSTRAPPING.R:** bootstrapping of KMA abundances using Piga et al.'s method for KMA hits after removing variance towers
----
+
 
 ### RData Object Descriptions
 
@@ -105,8 +102,7 @@ This is a repository for the code scripts and synthetic and sewage data used in 
 - **kma_after_var_bootstrap_resultsCombined.RData**: combined bootstrap results for kma_after_var data, using aggregated counts of taxa across all samples
 
 ---
----
 
 ## Attributions
-
+- [@mapstatHelpers : For the mapstatHelpers R package which was used in the thesis project for reading multiple maptstat files
 
