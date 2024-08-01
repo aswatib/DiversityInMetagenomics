@@ -86,17 +86,9 @@ kable(results_df)
 # ==============================================================================
 # Calculate summaries for each dataset
 summary_alpha10 <- compute_MoM_alpha(Dirichlet_alpha10[-1])
-summary_alpha10_dirmult <- compute_alpha_dirmult(Dirichlet_alpha10[-1])
-
-
 summary_alpha1 <- compute_MoM_alpha(Dirichlet_alpha1[-1])
-summary_alpha1_dirmult <- compute_alpha_dirmult(Dirichlet_alpha1[-1])
-
 summary_alpha05 <- compute_MoM_alpha(sparseDirichlet[-1])
-summary_alpha05_dirmult <- compute_alpha_dirmult(sparseDirichlet[-1])
-
 summary_alpha001 <- compute_MoM_alpha(sparseDirichlet2[-1])
-summary_alpha001_dirmult <- compute_alpha_dirmult(sparseDirichlet2[-1])
 
 # Combine all summaries into one table
 summary_table <- rbind(

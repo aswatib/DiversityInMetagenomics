@@ -1,7 +1,7 @@
 #         ESTIMATION OF ENTROPIES FOR SYNTHETIC DATA
 #       FOR BOTH MAPPED COUNTS AND ALIGNMENT COUNTS
 # ------------------------------------------------------------------------------
-source("SYNTHETIC _MAPPED.R")
+source("SYNTHETIC_MAPPED.R")
 # ------------------------------------------------------------------------------
 # ==============================================================================
 #       INDIVIDUAL SAMPLE ENTROPIES BEFORE REMOVING VARIANCE TOWERS 
@@ -202,6 +202,37 @@ datasets_aln <- c("BacOriginal_Dirichlet_alpha10_before_var_aln",
                   "BacATG_Dirichlet_alpha1_after_var_aln",
                   "BacATG_sparseDirichlet_after_var_aln",
                   "BacATG_sparseDirichlet2_after_var_aln")
+
+
+# Chao1 estimates for alignment counts
+for (i in 1:length(datasets_aln)) {
+  dataset_name <- datasets_aln[i]
+  df <- get(datasets_aln[i])
+  df <- df[-1]
+  H_chao1 <- fossil::chao1(df)
+  print(paste("Chao1 diversity for:", dataset_name, ":", round(H_chao1)))
+}
+
+# Alpha estimations for alingmnet count
+for (i in 1:length(datasets_aln)) {
+  dataset_name <- datasets_aln[i]
+  df <- get(datasets_aln[i])
+  df <- df[-1]
+  alphas <- compute_MoM_alpha(df)[[2]]
+  print(paste("Alpha for:", dataset_name, ":", round(mean(alphas), 4)))
+}
+
+
+for (i in 1:length(datasets_aln)) {
+  df <- get(datasets_aln[i])
+  df <- df[-1]
+  #alpha <- alphas[i]
+  print(dim(df))
+  entropies_df <- estimate_individual_entropies(df)
+  
+  # Save the entropy dataframe for each set
+  assign(paste0(datasets_aln[i], "_individual_entropies"), entropies_df, envir = .GlobalEnv)
+}
 
 # Estimate sample-wise entropy for each set
 for (i in 1:length(datasets_aln)) {
